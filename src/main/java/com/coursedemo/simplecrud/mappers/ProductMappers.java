@@ -7,10 +7,10 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProductMappers {
     ProductMappers INSTANCE = Mappers.getMapper(ProductMappers.class);
 
-    @Mapping(source = "title",target = "name");
+    @Mapping(source = "title",target = "name")
     Product rdmProductToProduct(RdmProduct product);
 }
